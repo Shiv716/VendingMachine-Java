@@ -18,6 +18,7 @@ public class Vend {
     // Start the program with initial window by only those who know the password.
     // Create a space for storing everyone's passwords.
     // Put in warning labels and code accordingly in controller class to put in valid code and product
+    // Display user's name when logging in through password.
 
 
     //Hashmap for all the products:-
