@@ -32,22 +32,44 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Machine.VendingController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Machine.VendingController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <DatePicker fx:id="Date" layoutX="236.0" layoutY="37.0" onAction="#AddDate" />
-            <Slider fx:id="Slider" layoutX="62.0" layoutY="176.0" onDragDetected="#ChooseProduct" />
-            <Label fx:id="Label" alignment="CENTER" layoutX="259.0" layoutY="166.0" onDragDetected="#DisplayCode" prefHeight="45.0" prefWidth="134.0" text="DisplayProduct" />
-            <Hyperlink fx:id="Link" layoutX="294.0" layoutY="290.0" onAction="#PaymentTransfer" text="Hyperlink" />
-            <Label fx:id="WarningLabel" layoutX="477.0" layoutY="174.0" onDragDetected="#VerifyProduct" prefHeight="26.0" prefWidth="86.0" text="Warning Label" />
+            <DatePicker fx:id="Date" editable="false" layoutX="397.0" layoutY="31.0" onAction="#AddDate" />
+            <Slider fx:id="slider" layoutX="67.0" layoutY="99.0" majorTickUnit="1.0" max="30.0" onDragDetected="#ChooseProduct" prefHeight="52.0" prefWidth="520.0" showTickLabels="true" showTickMarks="true">
+               <effect>
+                  <Glow />
+               </effect></Slider>
+            <Label fx:id="displayLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="220.0" prefHeight="45.0" prefWidth="134.0" text="Choose your product" textFill="#3200e8" underline="true">
+               <font>
+                  <Font name="American Typewriter" size="13.0" />
+               </font></Label>
+            <Hyperlink fx:id="Link" alignment="CENTER" layoutX="290.0" layoutY="343.0" onAction="#PaymentTransfer" prefHeight="27.0" prefWidth="78.0" text="BUY!" textFill="#3200e8" underline="true">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font></Hyperlink>
+            <Button fx:id="Button" layoutX="198.0" layoutY="173.0" mnemonicParsing="false" onAction="#setButton" text="SELECT" textFill="#3200e8">
+               <font>
+                  <Font name="American Typewriter" size="13.0" />
+               </font></Button>
+            <Button fx:id="Add" layoutX="179.0" layoutY="291.0" mnemonicParsing="false" onAction="#add" prefHeight="27.0" prefWidth="47.0" text="+" textFill="#3200e8" />
+            <Button fx:id="Minus" layoutX="240.0" layoutY="291.0" mnemonicParsing="false" onAction="#minus" prefHeight="27.0" prefWidth="47.0" text="-" textFill="#3200e8" />
+            <TextArea fx:id="List" editable="false" layoutX="353.0" layoutY="166.0" prefHeight="154.0" prefWidth="230.0" text="Start with Date!" wrapText="true">
+               <font>
+                  <Font name="Apple Braille Outline 6 Dot" size="32.0" />
+               </font>
+            </TextArea>
+            <Label fx:id="welcome" alignment="CENTER" layoutX="70.0" layoutY="36.0" prefHeight="45.0" prefWidth="280.0" textFill="#0fd957" underline="true">
+               <font>
+                  <Font name="Bodoni 72 Smallcaps Book" size="28.0" />
+               </font>
+            </Label>
       </children>
     </AnchorPane>
   </children>
