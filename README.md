@@ -4,3 +4,5 @@ Simulates a vending machine to facilitate product selection and secure payment p
 ## Tools
 - `java`
 - `javafx`
+
+Note: This repository is archived and is no longer actively maintained. It has been preserved to showcase the project and the skills demonstrated during its development.
